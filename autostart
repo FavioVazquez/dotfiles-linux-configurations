@@ -1,0 +1,3 @@
+#!/bin/bash
+setxkbmap -layout es -option caps:swapescape
+kupfer --no-splash &
