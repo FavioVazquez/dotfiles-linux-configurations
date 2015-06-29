@@ -23,6 +23,10 @@
 
  NeoBundle 'bling/vim-airline'
  NeoBundle 'edkolev/tmuxline.vim'
+
+ "Version Control
+ NeoBundle 'tpope/vim-fugitive'
+
  call neobundle#end()
 
  " Required:
@@ -39,3 +43,4 @@ set laststatus=2
 set t_Co=256
 
 let g:tmuxline_powerline_separators = 0
+set number	
