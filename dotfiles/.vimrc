@@ -21,6 +21,8 @@
  " Refer to |:NeoBundle-examples|.
  " Note: You don't set neobundle setting in .gvimrc!
 
+ NeoBundle 'bling/vim-airline'
+ NeoBundle 'edkolev/tmuxline.vim'
  call neobundle#end()
 
  " Required:
@@ -29,3 +31,11 @@
  " If there are uninstalled bundles found on startup,
  " this will conveniently prompt you to install them.
  NeoBundleCheck
+
+" Always show statusline
+set laststatus=2
+
+" Use 256 colours (Use this setting only if your terminal supports 256 colours)
+set t_Co=256
+
+let g:tmuxline_powerline_separators = 0
