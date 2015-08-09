@@ -156,15 +156,20 @@ set $volume_down exec --no-startup-id pactl set-sink-volume 0 +5%
 set $volume_up exec --no-startup-id pactl set-sink-volume 0 -- -5%
 set $volume_mute exec --no-startup-id pactl set-sink-volume 0 toggle
 
-set $mode_sink Sink (d) volume down (u) volume up (m) mute invert colors (i) 
+set $mode_sink Sink (d) volume down (u) volume up (m) mute invert colors (i) Backlight up (h) Backlight down (l)
 mode "$mode_sink" {
-	bindsym d $volume_down
-	bindsym u $volume_up
-	bindsym m $volume_mute 
-	bindsym i exec --no-startup-id xcalib -i -a
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+bindsym u $volume_down
+bindsym d $volume_up
+bindsym m $volume_mute
+bindsym i exec --no-startup-id xcalib -i -a
+bindsym h exec --no-startup-id xbacklight +10
+bindsym l exec --no-startup-id xbacklight -10
+bindsym Return mode "default"
+bindsym Escape mode "default"
 }
 bindsym $mod+n mode "$mode_sink"
-exec --no-startup-id $HOME/.i3/autostart
+exec --no-startup-id setxkbmap -layout es -option caps:swapescape
+exec --no-startup-id kupfer --no-splash
+
+#exec --no-startup-id $HOME/.i3/autostart
 
